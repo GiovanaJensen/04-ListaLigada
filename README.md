@@ -1,5 +1,7 @@
 # Lista Ligada
 ---
+# Nome: Giovana de Oliveira Fernandes
+## E-mail: giovana.fernandes2@fatec.sp.gov.br
 
 ## Objetivos
 
