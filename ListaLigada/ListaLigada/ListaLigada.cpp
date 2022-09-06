@@ -175,6 +175,10 @@ void excluirElemento() {
       }
       
     }
+  }else{
+    cout << "Elemento nao encontrado\n";
+  }
+}
 
 void buscarElemento()
 {
