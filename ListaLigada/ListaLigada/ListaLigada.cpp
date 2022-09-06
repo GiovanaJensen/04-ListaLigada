@@ -117,6 +117,7 @@ void exibirElementos()
 
 void inserirElemento()
 {
+	int valor;
 	// aloca memoria dinamicamente para o novo elemento
 	NO* novo = (NO*)malloc(sizeof(NO));
 	if (novo == NULL)
@@ -125,21 +126,29 @@ void inserirElemento()
 	}
 
 	cout << "Digite o elemento: ";
-	cin >> novo->valor;
-	novo->prox = NULL;
+	cin >> valor;
+	
+	NO* encontrado = posicaoElemento(valor);
 
-	if (primeiro == NULL)
-	{
-		primeiro = novo;
-	}
-	else
-	{
-		// procura o final da lista
-		NO* aux = primeiro;
-		while (aux->prox != NULL) {
-			aux = aux->prox;
+	if (encontrado == NULL) {
+		novo->valor = valor;
+		novo->prox = NULL;
+		if (primeiro == NULL)
+		{
+			primeiro = novo;
 		}
-		aux->prox = novo;
+		else
+		{
+			// procura o final da lista
+			NO* aux = primeiro;
+			while (aux->prox != NULL) {
+				aux = aux->prox;
+			}
+			aux->prox = novo;
+		}
+	}
+	else {
+		cout << "Elemento ja existe na lista\n";
 	}
 }
 
@@ -150,7 +159,16 @@ void excluirElemento()
 
 void buscarElemento()
 {
-	
+	int valor;
+	cout << "Digite o elemento que deseja buscar: \n";
+	cin >> valor;
+	NO* encontrado = posicaoElemento(valor);
+	if (encontrado != NULL) {
+		cout << "Elemento encontrado!\n";
+	}
+	else {
+		cout << "Elemento nao encontrado!\n";
+	}
 }
 
 
